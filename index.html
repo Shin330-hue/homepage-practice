@@ -3,30 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Homepage</title>
+    <title>Video Creator Portfolio</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .container {
             text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
         }
-        h1 {
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #888;
+            margin-bottom: 2rem;
+        }
+
+        .hero .cta {
+            display: inline-block;
+            padding: 12px 32px;
+            background: #e63946;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero .cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(230, 57, 70, 0.4);
+        }
+
+        /* セクション共通 */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #e63946;
+            margin: 10px auto 0;
+        }
+
+        /* 自己紹介 */
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .about-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .about-text {
+            max-width: 500px;
+        }
+
+        .about-text p {
+            color: #ccc;
+            margin-bottom: 1rem;
+        }
+
+        /* 作品ギャラリー */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .work-item {
+            background: #1a1a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-thumbnail {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 3rem;
+            color: #666;
+        }
+
+        .work-info {
+            padding: 15px;
+        }
+
+        .work-info h3 {
+            margin-bottom: 5px;
+        }
+
+        .work-info p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* スキル */
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill-tag {
+            background: #1a1a2e;
+            padding: 10px 24px;
+            border-radius: 25px;
+            border: 1px solid #333;
+        }
+
+        /* コンタクト */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            display: inline-block;
+            padding: 12px 28px;
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .contact-links a:hover {
+            background: #e63946;
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #555;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello, GitHub Pages!</h1>
-        <p>デプロイ成功！</p>
-    </div>
+
+    <!-- ヒーロー -->
+    <header class="hero">
+        <h1>YOUR NAME</h1>
+        <p class="tagline">Video Creator / Editor</p>
+        <a href="#works" class="cta">View Works</a>
+    </header>
+
+    <!-- 自己紹介 -->
+    <section id="about">
+        <h2>About</h2>
+        <div class="about">
+            <div class="about-img">👤</div>
+            <div class="about-text">
+                <p>映像クリエイターとして活動しています。企業VP、MV、YouTube動画など幅広く制作しています。</p>
+                <p>映像で「伝わる」を形にすることを大切にしています。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品 -->
+    <section id="works">
+        <h2>Works</h2>
+        <div class="works-grid">
+            <div class="work-item">
+                <div class="work-thumbnail">▶</div>
+                <div class="work-info">
+                    <h3>企業VP - Sample Inc.</h3>
+                    <p>会社紹介映像</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-thumbnail">▶</div>
+                <div class="work-info">
+                    <h3>MV - "Song Title"</h3>
+                    <p>アーティスト名</p>
+                </div>
+            </div>
+            <div class="work-item">
+                <div class="work-thumbnail">▶</div>
+                <div class="work-info">
+                    <h3>YouTube動画</h3>
+                    <p>チャンネル用コンテンツ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- スキル -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">Premiere Pro</span>
+            <span class="skill-tag">After Effects</span>
+            <span class="skill-tag">DaVinci Resolve</span>
+            <span class="skill-tag">Photoshop</span>
+            <span class="skill-tag">撮影</span>
+            <span class="skill-tag">カラーグレーディング</span>
+        </div>
+    </section>
+
+    <!-- コンタクト -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-links">
+            <a href="https://twitter.com/" target="_blank">X (Twitter)</a>
+            <a href="https://youtube.com/" target="_blank">YouTube</a>
+            <a href="mailto:your@email.com">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 YOUR NAME. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
