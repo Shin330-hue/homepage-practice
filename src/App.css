@@ -341,6 +341,11 @@ section {
   margin: 0 auto;
 }
 
+.thumbnail-single {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .thumbnail-card {
   text-decoration: none;
   color: var(--text-main);
@@ -532,6 +537,20 @@ section {
 .work-info p {
   font-size: 0.9rem;
   color: var(--text-muted);
+}
+
+.work-thumb-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background: #f5f5f5;
+}
+
+.work-thumb-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 /* Footer */

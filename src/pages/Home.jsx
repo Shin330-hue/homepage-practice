@@ -117,10 +117,10 @@ function Home() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                 >
-                    サムネイル制作
+                    デザイン
                 </motion.h2>
 
-                <div className="thumbnail-grid">
+                <div className="thumbnail-single">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -128,20 +128,8 @@ function Home() {
                         transition={{ duration: 0.6 }}
                     >
                         <Link to="/thumbnail/business" className="thumbnail-card">
-                            <img src="/img/thumb-business.jpg" alt="Business Thumbnail" className="thumbnail-img" />
-                            <p>ビジネス向けサムネイル</p>
-                        </Link>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <Link to="/thumbnail/variety" className="thumbnail-card">
-                            <img src="/img/thumb-variety.png" alt="Variety Thumbnail" className="thumbnail-img" />
-                            <p>バラエティ向けサムネイル</p>
+                            <img src="/img/thumb-business.jpg" alt="サムネイル制作" className="thumbnail-img" />
+                            <p>サムネイル制作</p>
                         </Link>
                     </motion.div>
                 </div>

@@ -11,14 +11,18 @@ const pageConfig = {
     }
 }
 
-// 仮データ
-const sampleThumbnails = [
-    { id: 1, title: 'サムネイルサンプル 1', description: 'YouTube動画用サムネイル' },
-    { id: 2, title: 'サムネイルサンプル 2', description: 'SNS投稿用画像' },
-    { id: 3, title: 'サムネイルサンプル 3', description: 'バナー広告デザイン' },
-    { id: 4, title: 'サムネイルサンプル 4', description: 'ライブ配信用サムネイル' },
-    { id: 5, title: 'サムネイルサンプル 5', description: 'チャンネルアート' },
-    { id: 6, title: 'サムネイルサンプル 6', description: 'プロモーション画像' },
+// サムネイル作品データ（全10枚）
+const thumbnailWorks = [
+    { id: 1, image: '/img/thumb-work-01.png', title: 'あおり風デザイン' },
+    { id: 2, image: '/img/thumb-work-02.png', title: 'ギラギラスタイル' },
+    { id: 3, image: '/img/thumb-work-03.png', title: 'きたしょー様風' },
+    { id: 4, image: '/img/thumb-work-04.png', title: '動画マーケティング攻略チャンネル様風' },
+    { id: 5, image: '/img/thumb-work-05.png', title: 'ダラシメンホラーチャンネル様風' },
+    { id: 6, image: '/img/thumb-work-06.png', title: 'ブラックな社長様風' },
+    { id: 7, image: '/img/thumb-work-07.png', title: 'ゴンザレス様風' },
+    { id: 8, image: '/img/thumb-work-08.png', title: '2分割デザイン' },
+    { id: 9, image: '/img/thumb-work-09.png', title: '松井証券様風' },
+    { id: 10, image: '/img/thumb-work-10.png', title: 'サムネイル制作' }
 ]
 
 function ThumbnailWorksPage() {
@@ -57,18 +61,17 @@ function ThumbnailWorksPage() {
                 initial="hidden"
                 animate="visible"
             >
-                {sampleThumbnails.map((work) => (
+                {thumbnailWorks.map((work) => (
                     <motion.div
                         key={work.id}
-                        className="work-item thumbnail"
+                        className="work-item"
                         variants={fadeInUp}
                     >
-                        <div className="work-thumb-placeholder horizontal">
-                            <span>サムネ {work.id}</span>
+                        <div className="work-thumb-wrapper">
+                            <img src={work.image} alt={work.title} className="work-thumb-img" />
                         </div>
                         <div className="work-info">
                             <h3>{work.title}</h3>
-                            <p>{work.description}</p>
                         </div>
                     </motion.div>
                 ))}
