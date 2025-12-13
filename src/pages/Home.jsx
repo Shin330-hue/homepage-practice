@@ -64,7 +64,7 @@ function Home() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <img src="/img/profile-new.png" alt="Profile" />
+                        <img src="/img/profile-new.jpg" alt="Profile" />
                     </motion.div>
                 </div>
             </section>

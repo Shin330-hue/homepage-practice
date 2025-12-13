@@ -20,23 +20,33 @@ function ContactForm() {
         e.preventDefault()
         setIsSubmitting(true)
 
-        // TODO: 送信先を後で設定
-        // 現在は送信先未設定のため、コンソールに出力
-        console.log('Form submitted:', formData)
-
-        // 仮の送信処理（後で実際のAPIに置き換え）
         try {
-            // const response = await fetch('YOUR_FORM_ENDPOINT', {
-            //   method: 'POST',
-            //   headers: { 'Content-Type': 'application/json' },
-            //   body: JSON.stringify(formData)
-            // })
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: import.meta.env.VITE_WEB3FORMS_KEY,
+                    name: formData.name,
+                    email: formData.email,
+                    phone: formData.phone || '未入力',
+                    message: formData.message || '未入力',
+                    subject: `【K's Movie】${formData.name}様からのお問い合わせ`
+                })
+            })
 
-            // 仮の成功表示
-            await new Promise(resolve => setTimeout(resolve, 1000))
-            setSubmitStatus('success')
-            setFormData({ name: '', email: '', phone: '', message: '' })
+            const result = await response.json()
+
+            if (result.success) {
+                setSubmitStatus('success')
+                setFormData({ name: '', email: '', phone: '', message: '' })
+            } else {
+                throw new Error('送信に失敗しました')
+            }
         } catch (error) {
+            console.error('Form submission error:', error)
             setSubmitStatus('error')
         } finally {
             setIsSubmitting(false)
