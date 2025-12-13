@@ -80,47 +80,31 @@ function Home() {
                     動画編集
                 </motion.h2>
 
-                <div className="video-grid">
-                    {/* Business Column */}
+                <div className="video-grid-simple">
+                    {/* Business Card */}
                     <motion.div
-                        className="video-column"
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h3 className="column-title">ビジネス</h3>
-                        <div className="video-items">
-                            <Link to="/video/business/vertical" className="video-card">
-                                <img src="/img/video-biz-vertical.png" alt="Business Vertical" className="video-thumb vertical" />
-                                <p>縦型動画</p>
-                            </Link>
-                            <Link to="/video/business/horizontal" className="video-card">
-                                <img src="/img/video-biz-horizontal.png" alt="Business Horizontal" className="video-thumb horizontal" />
-                                <p>横型動画</p>
-                            </Link>
-                        </div>
+                        <Link to="/video/business/horizontal" className="video-card-large">
+                            <img src="/img/video-biz-horizontal.png" alt="ビジネス動画" className="video-thumb-large" />
+                            <h3>ビジネス</h3>
+                        </Link>
                     </motion.div>
 
-                    {/* Variety Column */}
+                    {/* Variety Card */}
                     <motion.div
-                        className="video-column"
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: 0.2 }}
                     >
-                        <h3 className="column-title">バラエティ</h3>
-                        <div className="video-items">
-                            <Link to="/video/variety/vertical" className="video-card">
-                                <img src="/img/video-variety-vertical.png" alt="Variety Vertical" className="video-thumb vertical" />
-                                <p>縦型動画</p>
-                            </Link>
-                            <Link to="/video/variety/horizontal" className="video-card">
-                                <img src="/img/video-variety-horizontal.png" alt="Variety Horizontal" className="video-thumb horizontal" />
-                                <p>横型動画</p>
-                            </Link>
-                        </div>
+                        <Link to="/video/variety/horizontal" className="video-card-large">
+                            <img src="/img/video-variety-horizontal.png" alt="バラエティ動画" className="video-thumb-large" />
+                            <h3>バラエティ</h3>
+                        </Link>
                     </motion.div>
                 </div>
             </section>

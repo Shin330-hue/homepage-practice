@@ -246,6 +246,46 @@ section {
   margin: 0 auto;
 }
 
+/* Simplified Video Grid (2 cards) */
+.video-grid-simple {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.video-card-large {
+  display: block;
+  text-decoration: none;
+  color: var(--text-main);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.video-card-large:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumb-large {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.video-card-large h3 {
+  padding: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-main);
+}
+
 .column-title {
   font-size: 1.8rem;
   font-weight: 700;
@@ -514,8 +554,10 @@ footer {
     gap: 3rem;
   }
 
-  .video-grid {
-    gap: 3rem;
+  .video-grid,
+  .video-grid-simple {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
