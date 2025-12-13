@@ -25,20 +25,33 @@ const pageConfig = {
     }
 }
 
-// 仮データ
-const sampleWorks = [
-    { id: 1, title: '作品サンプル 1', description: 'クライアント様向けプロモーション動画' },
-    { id: 2, title: '作品サンプル 2', description: 'YouTube用コンテンツ' },
-    { id: 3, title: '作品サンプル 3', description: 'SNS向けショート動画' },
-    { id: 4, title: '作品サンプル 4', description: '企業PR動画' },
-    { id: 5, title: '作品サンプル 5', description: 'イベント紹介動画' },
-    { id: 6, title: '作品サンプル 6', description: '商品紹介動画' },
-]
+// 実際の動画データ
+const worksData = {
+    'business-horizontal': [
+        { id: 1, videoId: 'BJw9yrK8RU0', title: '宣伝動画' },
+        { id: 2, videoId: 'w8TAWbs4UoM', title: 'Healty Life様サンプル' },
+        { id: 3, videoId: 'w_O-lvkn3OA', title: '250801 ブイスト様' },
+        { id: 4, videoId: 'dHPY-CRSttM', title: 'サムネ集 25 11 14' }
+    ],
+    // 他のページは仮データ
+    'default': [
+        { id: 1, title: '作品サンプル 1', description: 'クライアント様向けプロモーション動画' },
+        { id: 2, title: '作品サンプル 2', description: 'YouTube用コンテンツ' },
+        { id: 3, title: '作品サンプル 3', description: 'SNS向けショート動画' },
+        { id: 4, title: '作品サンプル 4', description: '企業PR動画' },
+        { id: 5, title: '作品サンプル 5', description: 'イベント紹介動画' },
+        { id: 6, title: '作品サンプル 6', description: '商品紹介動画' }
+    ]
+}
 
 function VideoWorksPage() {
     const { category, type } = useParams()
     const pageKey = `${category}-${type}`
     const config = pageConfig[pageKey] || { title: '動画作品', type: 'horizontal' }
+
+    // ページに応じたデータを取得
+    const works = worksData[pageKey] || worksData['default']
+    const hasYouTube = worksData[pageKey] !== undefined
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 40 },
@@ -72,18 +85,32 @@ function VideoWorksPage() {
                 initial="hidden"
                 animate="visible"
             >
-                {sampleWorks.map((work) => (
+                {works.map((work) => (
                     <motion.div
                         key={work.id}
                         className={`work-item ${config.type}`}
                         variants={fadeInUp}
                     >
-                        <div className={`work-thumb-placeholder ${config.type}`}>
-                            <span>作品 {work.id}</span>
-                        </div>
+                        {hasYouTube && work.videoId ? (
+                            // YouTube埋め込み
+                            <div className="video-embed">
+                                <iframe
+                                    src={`https://www.youtube.com/embed/${work.videoId}`}
+                                    title={work.title}
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
+                        ) : (
+                            // プレースホルダー
+                            <div className={`work-thumb-placeholder ${config.type}`}>
+                                <span>作品 {work.id}</span>
+                            </div>
+                        )}
                         <div className="work-info">
                             <h3>{work.title}</h3>
-                            <p>{work.description}</p>
+                            {work.description && <p>{work.description}</p>}
                         </div>
                     </motion.div>
                 ))}

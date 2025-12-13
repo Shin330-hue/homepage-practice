@@ -1,10 +1,21 @@
 import { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import './App.css'
 
 import Home from './pages/Home'
 import VideoWorksPage from './pages/VideoWorksPage'
 import ThumbnailWorksPage from './pages/ThumbnailWorksPage'
+
+// スクロールをトップにリセットするコンポーネント
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function App() {
   const [scrolled, setScrolled] = useState(false)
@@ -19,6 +30,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         {/* Navigation */}
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>

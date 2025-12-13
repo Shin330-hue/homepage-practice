@@ -20,11 +20,12 @@ function Home() {
                         animate="visible"
                         variants={fadeInUp}
                     >
-                        <h1>
-                            <span>VIDEO & THUMBNAIL</span>
-                            CREATOR
-                        </h1>
-                        <p>映像は"魂"を映し出す。<br />あなたのビジョンを、心に残る物語へ。</p>
+                        <h1>映像は"魂"を映し出す</h1>
+                        <p>
+                            映像には、言葉を超えて心を動かす力がある。<br />
+                            岐阜を拠点に、ストーリーのある映像制作を行っています。<br />
+                            撮影から編集まで、一貫したクリエイティブを提供します。
+                        </p>
                         <a href="#contact" className="btn-contact">お問い合わせ →</a>
                     </motion.div>
                     <motion.div
@@ -50,12 +51,9 @@ function Home() {
                     >
                         <h2>ご挨拶</h2>
                         <p>
-                            はじめまして。K's Movie Producetです。<br />
-                            ビジネス向けからバラエティまで、幅広いジャンルの動画編集とサムネイル制作を行っております。<br />
-                        </p>
-                        <p>
-                            「ただ作る」のではなく、「伝わる」映像を。<br />
-                            お客様のイメージを形にし、視聴者の心に響くコンテンツを提供いたします。
+                            私は、仕事を「作業」ではなく「ワクワクする体験」に変えることを大切にしています。<br />
+                            個人の興味や情熱を尊重し、想いをカタチにするお手伝いをさせていただきます。<br />
+                            あなたのその思い、映像というカタチにしましょう。
                         </p>
                     </motion.div>
 
@@ -93,11 +91,11 @@ function Home() {
                     >
                         <h3 className="column-title">ビジネス</h3>
                         <div className="video-items">
-                            <Link to="/video/business-vertical" className="video-card">
+                            <Link to="/video/business/vertical" className="video-card">
                                 <img src="/img/video-biz-vertical.png" alt="Business Vertical" className="video-thumb vertical" />
                                 <p>縦型動画</p>
                             </Link>
-                            <Link to="/video/business-horizontal" className="video-card">
+                            <Link to="/video/business/horizontal" className="video-card">
                                 <img src="/img/video-biz-horizontal.png" alt="Business Horizontal" className="video-thumb horizontal" />
                                 <p>横型動画</p>
                             </Link>
@@ -114,11 +112,11 @@ function Home() {
                     >
                         <h3 className="column-title">バラエティ</h3>
                         <div className="video-items">
-                            <Link to="/video/variety-vertical" className="video-card">
+                            <Link to="/video/variety/vertical" className="video-card">
                                 <img src="/img/video-variety-vertical.png" alt="Variety Vertical" className="video-thumb vertical" />
                                 <p>縦型動画</p>
                             </Link>
-                            <Link to="/video/variety-horizontal" className="video-card">
+                            <Link to="/video/variety/horizontal" className="video-card">
                                 <img src="/img/video-variety-horizontal.png" alt="Variety Horizontal" className="video-thumb horizontal" />
                                 <p>横型動画</p>
                             </Link>
@@ -146,7 +144,7 @@ function Home() {
                         transition={{ duration: 0.6 }}
                     >
                         <Link to="/thumbnail/business" className="thumbnail-card">
-                            <img src="/img/thumb-business.png" alt="Business Thumbnail" className="thumbnail-img" />
+                            <img src="/img/thumb-business.jpg" alt="Business Thumbnail" className="thumbnail-img" />
                             <p>ビジネス向けサムネイル</p>
                         </Link>
                     </motion.div>
