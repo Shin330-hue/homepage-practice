@@ -65,7 +65,7 @@ function ContactForm() {
     }
 
     return (
-        <section className="contact-section">
+        <section className="contact-section" id="contact">
             <motion.h2
                 className="section-title"
                 initial={{ opacity: 0 }}

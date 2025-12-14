@@ -142,11 +142,12 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 900;
   line-height: 1.2;
   margin-bottom: 2rem;
-  letter-spacing: -0.05rem;
+  letter-spacing: -0.02rem;
+  white-space: nowrap;
 }
 
 .hero-content h1 span {
@@ -186,8 +187,18 @@ section {
   font-size: 2.2rem;
   font-weight: 800;
   margin-bottom: 4rem;
-  color: #ccc;
+  color: var(--text-main);
   /* Light grey title based on reference "横動画" etc */
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
 /* Greeting Section */
@@ -212,9 +223,10 @@ section {
 }
 
 .greeting-content h2 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: 2rem;
   font-weight: 900;
+  white-space: nowrap;
 }
 
 .greeting-content p {
@@ -758,7 +770,11 @@ footer {
   /* But we should probably keep logo */
 
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  .greeting-content h2 {
+    font-size: 1.4rem;
   }
 
   .section-title {
