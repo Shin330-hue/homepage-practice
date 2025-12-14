@@ -21,29 +21,38 @@ function ContactForm() {
         setIsSubmitting(true)
 
         try {
+            const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
+            console.log('Access Key:', accessKey ? `${accessKey.substring(0, 8)}...` : 'NOT SET')
+
+            const payload = {
+                access_key: accessKey,
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone || '未入力',
+                message: formData.message || '未入力',
+                subject: `【K's Movie】${formData.name}様からのお問い合わせ`
+            }
+            console.log('Sending payload:', { ...payload, access_key: '[HIDDEN]' })
+
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({
-                    access_key: import.meta.env.VITE_WEB3FORMS_KEY,
-                    name: formData.name,
-                    email: formData.email,
-                    phone: formData.phone || '未入力',
-                    message: formData.message || '未入力',
-                    subject: `【K's Movie】${formData.name}様からのお問い合わせ`
-                })
+                body: JSON.stringify(payload)
             })
 
+            console.log('Response status:', response.status)
             const result = await response.json()
+            console.log('Response body:', result)
 
             if (result.success) {
                 setSubmitStatus('success')
                 setFormData({ name: '', email: '', phone: '', message: '' })
             } else {
-                throw new Error('送信に失敗しました')
+                console.error('Web3Forms error:', result.message)
+                throw new Error(result.message || '送信に失敗しました')
             }
         } catch (error) {
             console.error('Form submission error:', error)
