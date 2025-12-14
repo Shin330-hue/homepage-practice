@@ -21,7 +21,8 @@ function ContactForm() {
         setIsSubmitting(true)
 
         try {
-            const accessKey = import.meta.env.VITE_WEB3FORMS_KEY
+            // Fallback to hardcoded key if env var is not available (Web3Forms keys are public)
+            const accessKey = import.meta.env.VITE_WEB3FORMS_KEY || '62ca205b-6b05-4778-b9c0-32265c421458'
             console.log('Access Key:', accessKey ? `${accessKey.substring(0, 8)}...` : 'NOT SET')
 
             const payload = {
