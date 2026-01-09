@@ -9,7 +9,7 @@ const pageConfig = {
         type: 'vertical'
     },
     'business-horizontal': {
-        title: 'ビジネス - 横型動画',
+        title: 'ビジネス',
         category: 'business',
         type: 'horizontal'
     },
@@ -27,11 +27,15 @@ const pageConfig = {
 
 // 実際の動画データ
 const worksData = {
+    'business-vertical': [
+        { id: 1, videoId: 'wQtc40FARYA', title: '縦型動画サンプル' }
+    ],
     'business-horizontal': [
-        { id: 1, videoId: 'BJw9yrK8RU0', title: '宣伝動画' },
-        { id: 2, videoId: 'w8TAWbs4UoM', title: 'Healty Life様サンプル' },
-        { id: 3, videoId: 'w_O-lvkn3OA', title: '250801 ブイスト様' },
-        { id: 4, videoId: 'dHPY-CRSttM', title: 'サムネ集 25 11 14' }
+        { id: 1, videoId: 'wQtc40FARYA', title: '縦型動画サンプル' },
+        { id: 2, videoId: 'BJw9yrK8RU0', title: '宣伝動画' },
+        { id: 3, videoId: 'w8TAWbs4UoM', title: 'Healty Life様サンプル' },
+        { id: 4, videoId: 'w_O-lvkn3OA', title: '250801 ブイスト様' },
+        { id: 5, videoId: 'dHPY-CRSttM', title: 'サムネ集 25 11 14' }
     ],
     // 他のページは仮データ
     'default': [
