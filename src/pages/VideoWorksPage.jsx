@@ -28,7 +28,8 @@ const pageConfig = {
 // 実際の動画データ
 const worksData = {
     'business-vertical': [
-        { id: 1, videoId: 'wQtc40FARYA', title: '縦型動画サンプル' }
+        { id: 1, videoId: 'wQtc40FARYA', title: '縦型動画サンプル' },
+        { id: 2, videoId: 'JP1HbFqR5Dg', title: '縦型動画サンプル2' }
     ],
     'business-horizontal': [
         { id: 1, videoId: 'wQtc40FARYA', title: '縦型動画サンプル' },
