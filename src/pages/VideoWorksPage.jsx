@@ -28,16 +28,18 @@ const pageConfig = {
 // 実際の動画データ
 const worksData = {
     'business-vertical': [
-        { id: 1, videoId: 'DsIzDxW755Y', title: '縦型動画サンプル' },
-        { id: 2, videoId: 'JP1HbFqR5Dg', title: '縦型動画サンプル2' }
+        { id: 1, videoId: 'DsIzDxW75Y', title: '縦型動画サンプル' },
+        { id: 2, videoId: 'JP1HbFqR5Dg', title: '縦型動画サンプル2' },
+        { id: 3, videoId: 'PpEyW-9V8C4', title: '縦型動画サンプル3' }
     ],
     'business-horizontal': [
         { id: 1, videoId: 'DsIzDxW755Y', title: '縦型動画サンプル' },
         { id: 2, videoId: 'JP1HbFqR5Dg', title: '縦型動画サンプル2' },
-        { id: 3, videoId: 'BJw9yrK8RU0', title: '宣伝動画' },
-        { id: 4, videoId: 'w8TAWbs4UoM', title: 'Healty Life様サンプル' },
-        { id: 5, videoId: 'w_O-lvkn3OA', title: '250801 ブイスト様' },
-        { id: 6, videoId: 'dHPY-CRSttM', title: 'サムネ集 25 11 14' }
+        { id: 3, videoId: 'PpEyW-9V8C4', title: '縦型動画サンプル3' },
+        { id: 4, videoId: 'BJw9yrK8RU0', title: '宣伝動画' },
+        { id: 5, videoId: 'w8TAWbs4UoM', title: 'Healty Life様サンプル' },
+        { id: 6, videoId: 'w_O-lvkn3OA', title: '250801 ブイスト様' },
+        { id: 7, videoId: 'dHPY-CRSttM', title: 'サムネ集 25 11 14' }
     ],
     // 他のページは仮データ
     'default': [
